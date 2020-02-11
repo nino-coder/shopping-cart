@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+body{
+  /* background-image: radial-gradient(circle, #c8cacd, #c3cfd9, #bbd5e2, #afdce8, #a4e3e9);
+   */
+   background-image: radial-gradient(circle, #c8cacd, #b1bcc5, #96b0bc, #7aa4ae, #5d989d);
+}
