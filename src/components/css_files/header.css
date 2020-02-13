@@ -9,4 +9,9 @@
 }
 .header{
     display:grid;
+    /* position:fixed;
+    background-image: linear-gradient(to right top, #3f567a, #32476e, #253863, #1a2956, #0f1b4a);
+    height: 40px;
+    position: fixed;
+    width: 100vw; */
 }

@@ -1,6 +1,6 @@
 .product{
-    width: 55%;
-    height: 80%;
+    width: 60%;
+    height: 90%;
     box-shadow: 0 16px 16px -1px rgba(10, 22, 70, 0.1), 0 0 1px rgba(10, 22, 70, 0.06);
     border-radius: 8px;
     background-color: #ffffff;
@@ -8,23 +8,56 @@
     background-image: radial-gradient(circle, #a0aec4, #a1b6c7, #a4bdc9, #aac4ca, #b2cacb);
 }
  
-.product h4{
+.about-product >div h4{
     display: grid;
     /* justify-content: space-between;*/
     padding-left: 7%; 
     font-size: 13px;
+    margin: 0;
+    white-space: nowrap;
 }
-.product p{
+.about-product >div p{
     font-size: 12px;
     padding-left: 7%;
+    margin: 0;
+    white-space: nowrap;
 }
 .product img{
     width:100%;
     height:70%;
 }
+ img{
+    width:100%;
+    height:70%;
+    border-radius: 11px;
+}
 .about-product{
     display:grid;
     grid-template-columns:1fr 1fr;
+}
+
+.remove  {
+	box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #6b546b 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #e8e8e8;
+	display:inline-block;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.remove :hover {
+	background:linear-gradient(to bottom, #6b546b 5%, #ededed 100%);
+	background-color:#6b546b;
+}
+.remove :active {
+	position:relative;
+	top:1px;
 }
 .add-button {
     width: 50px;
@@ -52,6 +85,14 @@
 }
 .button-container{
     display: grid;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
+}
+b{
+    white-space: nowrap;
+}
+.product-container{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows:1fr 1fr;
 }

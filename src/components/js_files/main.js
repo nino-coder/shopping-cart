@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import  "../css_files/main.css";
-import Product from './product.js'
-import productData from '../data/productData.json' 
+import Product from './product.js';
 import Header from './header.js';
-export default class MainComponent extends Component{
+import {connect} from 'react-redux';
+
+class MainComponent extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -14,20 +15,22 @@ export default class MainComponent extends Component{
     render(){
         return(
             <div className= "main-container">
-            <Header/>
+                <Header/>
                 <div className="boxes-container">
                     <div className="boxes">
-                    {productData.map(info=> (
-                        <Product
-                            url={info.url}
-                            price={info.price}
-                            size={info.size}
-                        /> 
-                    
-                    ))}
+                        <div>
+                        <Product/> 
+                        </div>
                     </div>
                 </div>
             </div>
         );
     }
 }
+const mapStateToProps = (state)=>{
+    return {
+      items: state.items
+    }
+  }
+
+export default connect(mapStateToProps)(MainComponent)
