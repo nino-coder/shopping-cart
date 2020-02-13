@@ -1,31 +1,18 @@
-import React,{Component } from 'react';
+import React,{Component} from 'react';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import FilterListIcon from '@material-ui/icons/FilterList';
 import '../css_files/header.css'
 import { Link } from 'react-router-dom';
 
-function Header(props){
+class Header extends Component{
+    render(){
         return(
             <div className="header">
-                <button className = "cart">
-                <Link to={{pathname:"/cart"}}><ShoppingCartOutlinedIcon {...props}
-                //  style={{"paddingLeft": "90%"}}
-                 >
-                        {/* <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" /> */}
-                        {/* <p>cart</p> */}
-                    </ShoppingCartOutlinedIcon>
-                </Link>
-                </button>
-                {/* <button className = "filter"
-                //  style = {{"paddingLeft": "80%","marginTop":"-25px"}}
-                 >
-                <Link to={{pathname:"/filter"}}> <FilterListIcon {...props} >
-                        {/* <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" /> */}
-                    {/* </FilterListIcon> */}
-                {/* // </Link> */}
-                {/* // </button> */} 
+                <h3>Shopping</h3>
+                    <Link to={{pathname:"/cart"}} style={{"paddingLeft": "40px"}}>
+                        <ShoppingCartOutlinedIcon />
+                    </Link>
             </div>
         );
-    
+        }
 }
 export default Header;

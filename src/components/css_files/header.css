@@ -1,3 +1,7 @@
+.header{
+    height: 50px;
+    background-image: radial-gradient(circle, #a0aec4, #a1b6c7, #a4bdc9, #aac4ca, #b2cacb);
+}
 .header button{
     background: none;
 	color: inherit;
@@ -7,11 +11,8 @@
 	cursor: pointer;
 	outline: inherit;
 }
-.header{
-    display:grid;
-    /* position:fixed;
-    background-image: linear-gradient(to right top, #3f567a, #32476e, #253863, #1a2956, #0f1b4a);
-    height: 40px;
-    position: fixed;
-    width: 100vw; */
+.header h3{
+    display:inline-block;
+    padding-left:40px;
+    color: #133B5D;
 }

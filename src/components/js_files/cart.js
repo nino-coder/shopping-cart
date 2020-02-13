@@ -23,9 +23,9 @@ class Cart extends Component{
                                 <div style = {{"display":"grid","gridRowGap":"5px"}}>
                                     <h4>price: {product.price}$</h4>
                                     <p>size: {product.size}</p>
-                                    
+                                    <p>count: {product.quantity}</p> 
                                 </div>
-                                <b>count: {product.quantity}</b> 
+                                
                                 <DeleteIcon onClick={()=>{this.remove(product.id)}} style={{"cursor":"pointer"}}/>
                             </div>
                             
