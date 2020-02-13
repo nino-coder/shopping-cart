@@ -1,4 +1,4 @@
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY } from '../actions/types';
+import { ADD_TO_CART,REMOVE_ITEM,ADD_QUANTITY } from '../actions/types';
 
 const initState = {
     items: [
@@ -88,27 +88,7 @@ const cartReducer= (state = initState,action)=>{
               sumPrice: newSum
           }
     }
-    if(action.type=== SUB_QUANTITY){  
-        let addedProduct = state.items.find(product=> product.id === action.id) 
-        if(addedProduct.quantity === 1){
-            let new_products = state.addedProducts.filter(item=>item.id !== action.id)
-            let newSum = state.sumPrice - addedProduct.price
-            return{
-                ...state,
-                addedProducts: new_products,
-                sumPrice: newSum
-            }
-        }
-        else {
-            addedProduct.quantity -= 1
-            let newSum = state.sumPrice - addedProduct.price
-            return{
-                ...state,
-                sumPrice: newSum
-            }
-        }
-        
-    }
+ 
     
   else{
     return state

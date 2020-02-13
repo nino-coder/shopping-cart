@@ -1,9 +1,13 @@
 import React,{Component} from 'react';
 import '../css_files/product.css'
 import { connect } from 'react-redux';
+import DeleteIcon from '@material-ui/icons/Delete';
+import {removeItem} from '../../redux/actions/cartActions'
 
 class Cart extends Component{
-
+    remove=(id)=>{
+        this.props.removeItem(id);
+    }
     render(){
         let addedItems = this.props.items.length ?
             (  
@@ -17,6 +21,7 @@ class Cart extends Component{
                                     <p>size: {product.size}</p>
                                 </div>
                                 <b>count: {product.quantity}</b> 
+                                <DeleteIcon onClick={()=>{this.remove(product.id)}} style={{"cursor":"pointer"}}/>
                             </div>
                          </div>
 
@@ -34,7 +39,12 @@ class Cart extends Component{
 const mapStateToProps = (state)=>{
     return{
         items: state.addedProducts,
-        // addedItems: state.addedItems
     }
 }
-export default  connect(mapStateToProps)(Cart);
+const mapDispatchToProps= (dispatch)=>{
+    
+    return{
+        removeItem: (id)=>{dispatch(removeItem(id))},
+    }
+}
+export default  connect(mapStateToProps,mapDispatchToProps)(Cart);
