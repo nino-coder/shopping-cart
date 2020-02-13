@@ -8,30 +8,39 @@ class Cart extends Component{
     remove=(id)=>{
         this.props.removeItem(id);
     }
+
     render(){
-        let addedItems = this.props.items.length ?
+        const sum = typeof(this.props.sumPrice);
+        console.log(sum);
+        const addedItems = this.props.items.length ?
             (  
                 this.props.items.map(product=>{
                     return(
                         <div className="product" key={product.id}>
+                            {/* {let a = product.quantity*product.price} */}
                             <img src={product.url}></img>
                             <div className="about-product">
                                 <div style = {{"display":"grid","gridRowGap":"5px"}}>
-                                    <h4>price: {product.price}</h4>
+                                    <h4>price: {product.price}$</h4>
                                     <p>size: {product.size}</p>
+                                    
                                 </div>
                                 <b>count: {product.quantity}</b> 
                                 <DeleteIcon onClick={()=>{this.remove(product.id)}} style={{"cursor":"pointer"}}/>
                             </div>
+                            
                          </div>
 
                     )
                 })):(
-                    <p>You have 0 items in cart</p>
+                    <p className="message">You have 0 items in cart</p>
                 )    
         return(
-            <div style={{"display":"grid","gridTemplateColumns":"1fr 1fr 1fr","gridTemplateRows":"1fr 1fr"}}>
+            <div style={{"margin": "30px"}}>
+            <div className="product-container">
                 {addedItems}
+                <h4>Total price: {this.props.sumPrice}</h4>
+            </div>
             </div>
         );
     }
@@ -39,6 +48,7 @@ class Cart extends Component{
 const mapStateToProps = (state)=>{
     return{
         items: state.addedProducts,
+        sumPrice: state.sumPrice
     }
 }
 const mapDispatchToProps= (dispatch)=>{

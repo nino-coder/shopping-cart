@@ -7,14 +7,12 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import Filter from './components/js_files/filter';
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={MainContainer}/>
         <Route path='/cart' component={Cart} />
-        <Route path='/filter' component={Filter} />
       </Switch>
     </BrowserRouter>
   );
