@@ -1,18 +1,8 @@
-import React, {Component} from 'react';
+import React  from 'react';
 import  "../css_files/main.css";
 import Product from './product.js';
 import Header from './header.js';
-import {connect} from 'react-redux';
-
-class MainComponent extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-        
-        }
-    
-    }
-    render(){
+ export default function MainComponent(){
         return(
             <div className= "main-container">
                 <Header/>
@@ -25,12 +15,4 @@ class MainComponent extends Component{
                 </div>
             </div>
         );
-    }
 }
-const mapStateToProps = (state)=>{
-    return {
-      items: state.items
-    }
-  }
-
-export default connect(mapStateToProps)(MainComponent)
